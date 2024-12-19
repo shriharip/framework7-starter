@@ -1,0 +1,26 @@
+{
+  "cwd": "/Users/hari/ccappv1",
+  "type": [
+    "pwa",
+    "capacitor"
+  ],
+  "name": "crosscard",
+  "framework": "react",
+  "template": "tabs",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": true,
+    "color": "#ccb647",
+    "darkMode": false,
+    "iconFonts": true
+  },
+  "customBuild": false,
+  "pkg": "com.crosscard.app",
+  "capacitor": {
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}

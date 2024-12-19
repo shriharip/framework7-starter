@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">crosscard</string>
+    <string name="title_activity_main">crosscard</string>
+    <string name="package_name">com.crosscard.app</string>
+    <string name="custom_url_scheme">com.crosscard.app</string>
+</resources>

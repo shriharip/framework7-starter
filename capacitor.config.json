@@ -1,0 +1,13 @@
+{
+  "appId": "com.crosscard.app",
+  "appName": "crosscard",
+  "bundledWebRuntime": false,
+  "npmClient": "pnpm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
