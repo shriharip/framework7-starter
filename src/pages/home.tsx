@@ -15,8 +15,12 @@ import {
   Button
 } from 'framework7-react';
 
-const HomePage = () => (
+import { useTranslation } from 'react-i18next';
 
+const HomePage = () => {
+	const { t, i18n } = useTranslation();
+
+	return (
   <Page name="home">
     {/* Top Navbar */}
     <Navbar large sliding={false}>
@@ -32,7 +36,9 @@ const HomePage = () => (
 
     {/* Page content */}
     <Block>
-      <p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+				<p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+
+				<p>{t('title')}</p>
 
 
       <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
@@ -70,5 +76,6 @@ const HomePage = () => (
       />
     </List>
   </Page>
-);
+	);
+}
 export default HomePage;

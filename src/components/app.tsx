@@ -27,6 +27,7 @@ import {
 import capacitorApp from '../ts/capacitor-app';
 import routes from '../ts/routes';
 import store from '../ts/store';
+import '../ts/i18'
 
 const MyApp = () => {
   // Login screen demo data
