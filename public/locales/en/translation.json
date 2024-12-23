@@ -3,5 +3,11 @@
 	"description": {
 		"part1": "To get started, edit <1>src/App.js</1> and save to reload.",
 		"part2": "Switch language between english and german using buttons above."
+	},
+	"homePage": {
+		"cardLabelOne": "For you",
+		"cardContent": "This is a simple card with plain text, but cards can also contain their own header, footer, list view, image, or any other element.",
+		"listLabelOne": "Activities"
 	}
+
 }

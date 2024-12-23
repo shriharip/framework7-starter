@@ -1,28 +1,20 @@
 import React from 'react';
 import { Page, Navbar, Block, BlockTitle } from 'framework7-react';
+import { routeProps } from '@/types';
+import { Organization } from '@/components/payment_page/header';
+import { PaymentBlock } from '@/components/payment_page/payment';
 
-const AboutPage = () => (
+const AboutPage = (props: routeProps) => {
+	const { f7route, f7router } = props;
+
+
+	return (
   <Page>
     <Navbar title="About" backLink="Back" />
-    <BlockTitle>About My App</BlockTitle>
-    <Block>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni molestiae laudantium
-        dignissimos est nobis delectus nemo ea alias voluptatum architecto, amet similique, saepe
-        iste consectetur in repellat ut minus quibusdam!
-      </p>
-      <p>
-        Molestias et distinctio porro nesciunt ratione similique, magni doloribus, rerum nobis,
-        aliquam quae reiciendis quasi modi. Nam a recusandae, fugiat in ea voluptates fuga eius,
-        velit corrupti reprehenderit dignissimos consequatur!
-      </p>
-      <p>
-        Blanditiis, cumque quo adipisci. Molestiae, dolores dolorum quos doloremque ipsa ullam
-        eligendi commodi deserunt doloribus inventore magni? Ea mollitia veniam nostrum nihil, iusto
-        doloribus a at! Ea molestiae ullam delectus!
-      </p>
-    </Block>
+			<Organization />
+			<PaymentBlock />
   </Page>
 );
+}
 
 export default AboutPage;

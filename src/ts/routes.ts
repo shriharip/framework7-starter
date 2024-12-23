@@ -11,16 +11,26 @@ import RequestAndLoad from '@/pages/request-and-load.tsx';
 import NotFoundPage from '@/pages/404.tsx';
 
 import type { Router } from 'framework7/types';
+import ScanPage from '@/pages/scan';
+import { LoginPage } from '@/pages/login';
 
 const routes: Array<Router.RouteParameters> = [
   {
     path: '/',
     component: HomePage,
-  },
-  {
-    path: '/about/',
-    component: AboutPage,
-  },
+	},
+	{
+		path: '/scan',
+		component: ScanPage,
+	},
+	{
+		path: '/about/',
+		component: AboutPage,
+	},
+	{
+		path: '/login',
+		component: LoginPage,
+	},
   {
     path: '/form/',
     component: FormPage,

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Page, Navbar, Block, Link } from 'framework7-react';
+import { routeProps } from '@/types';
 
-const DynamicRoutePage = (props) => {
+const DynamicRoutePage = (props: routeProps) => {
   const { f7route, f7router } = props;
   return (
     <Page>

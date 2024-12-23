@@ -7,19 +7,26 @@ import {
   NavTitleLarge,
   NavRight,
   Link,
-  Toolbar,
+	Toolbar,
+	Card,
   Block,
   BlockTitle,
   List,
   ListItem,
-  Button
+	Button,
+	Fab,
+	Icon
 } from 'framework7-react';
 
 import { useTranslation } from 'react-i18next';
+import { getFirestore, doc } from 'firebase/firestore';
+import { useFirebaseApp, useFirestoreDocData } from 'reactfire';
+import store from '@/ts/store';
 
 const HomePage = () => {
 	const { t, i18n } = useTranslation();
 
+	console.log('store', store.state.user);
 	return (
   <Page name="home">
     {/* Top Navbar */}
@@ -27,32 +34,32 @@ const HomePage = () => {
       <NavLeft>
         <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="left" />
       </NavLeft>
-      <NavTitle className='ph6' sliding>Crosscard</NavTitle>
+				<NavTitle sliding>Crosscard</NavTitle>
       <NavRight>
         <Link iconIos="f7:menu" iconMd="material:menu" panelOpen="right" />
       </NavRight>
       <NavTitleLarge>Crosscard</NavTitleLarge>
     </Navbar>
 
-    {/* Page content */}
+			{/* Page content */}
+			<BlockTitle>{t('homePage.cardLabelOne')}</BlockTitle>
     <Block>
-				<p>This is an example of tabs-layout application. The main point of such tabbed layout is that each tab contains independent view with its own routing and navigation.</p>
+				<Card content={t('homePage.cardContent')} />
+			</Block>
 
-				<p>{t('title')}</p>
 
 
-      <p>Each tab/view may have different layout, different navbar type (dynamic, fixed or static) or without navbar like this tab.</p>
-    </Block>
-    <BlockTitle>Navigation</BlockTitle>
-    <List strong inset dividersIos>
+			<BlockTitle>Modals</BlockTitle>
+			<List strong inset dividersIos>
       <ListItem link="/about/" title="About"/>
       <ListItem link="/form/" title="Form"/>
-    </List>
+			</List>
 
-    <BlockTitle>Modals</BlockTitle>
+			<BlockTitle>Popup and Login Screen</BlockTitle>
     <Block className="grid grid-cols-2 grid-gap">
       <Button fill popupOpen="#my-popup">Popup</Button>
-      <Button fill loginScreenOpen="#my-login-screen">Login Screen</Button>
+				{/* <Button fill loginScreenOpen="#my-login-screen">Login Screen</Button> */}
+				<Link href="/login/">Login Screen</Link>
     </Block>
 
     <BlockTitle>Panels</BlockTitle>
@@ -74,7 +81,12 @@ const HomePage = () => {
         title="Request Data & Load"
         link="/request-and-load/user/123456/"
       />
-    </List>
+			</List>
+
+			{/* FAB buttons for scan */}
+			<Fab href='/scan' position="right-bottom" slot="fixed">
+				<Icon ios="f7:qrcode_viewfinder" md="material:qr_code_scanner" />
+			</Fab>
   </Page>
 	);
 }
